@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <%- include('partials/styles.ejs') %>
+</head>
+<body>
+    <%- include('partials/nav.ejs') %>
+
+    <% if (categories.length > 0) { %>
+        <% categories.forEach(category => { %>
+          
+            <h3 class="title"><%= category.title %></h3>
+            <img src="<%= category.catImage %>" alt="">
+            <a href="/details/:slug">read more</a>
+          
+        <% }) %>
+      <% } else { %>
+        <p>There are no blogs to display...</p>
+      <% } %>
+    
+    
+
+    
+</body>
+</html>
